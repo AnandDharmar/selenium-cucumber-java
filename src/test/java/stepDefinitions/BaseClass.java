@@ -8,16 +8,15 @@ import pageObjects.*;
 import java.util.Properties;
 
 public class BaseClass {
-
     public WebDriver driver;
-    public LoginPage lp;
-    public TShirtPage tp;
-    public SummaryPage sp;
-    public MyAccountPage ma;
+    public LoginPage loginPage;
+    public TShirtPage tShirtPage;
+    public SummaryPage summaryPage;
+    public MyAccountPage myAccountPage;
     public static Logger logger;
-    public ConfirmationPage cp;
-    public OrderHistoryPage oh;
-    public PersonalInfoPage pi;
+    public ConfirmationPage confirmationPage;
+    public OrderHistoryPage orderHistoryPage;
+    public PersonalInfoPage personalInfoPage;
     Properties configProp;
     public static PropertyReader testData = PropertyReader.getTestDataInstance();
 

@@ -1,0 +1,13 @@
+2021-02-20 00:20:42,472  INFO [main] Sample Project:29 - *********Browser Initialization************
+2021-02-20 00:20:48,700  INFO [main] Sample Project:53 - ********* Launching browser************
+2021-02-20 00:20:51,733  INFO [main] Sample Project:64 - ********* Selecting T-Shirt  ***************
+2021-02-20 00:20:56,626  INFO [main] Sample Project:72 - ********* Selecting Terms and Conditions  ***************
+2021-02-20 00:20:57,711  INFO [main] Sample Project:79 - ********* Pay by bank wire  ***************
+2021-02-20 00:21:00,203  INFO [main] Sample Project:85 - ********* Payment confirmation and reference no generated  ***************
+2021-02-20 00:21:01,274  INFO [main] Sample Project:92 - ********* Order history page ***************
+2021-02-20 00:21:02,246  INFO [main] Sample Project:99 - ********* Comparing the order should reflect the generated one ***************
+2021-02-20 00:21:03,021  INFO [main] Sample Project:29 - *********Browser Initialization************
+2021-02-20 00:21:08,713  INFO [main] Sample Project:53 - ********* Launching browser************
+2021-02-20 00:21:11,540  INFO [main] Sample Project:105 - ********* personal Information ***************
+2021-02-20 00:21:12,731  INFO [main] Sample Project:112 - ********* Update the last name ***************
+2021-02-20 00:21:13,614  INFO [main] Sample Project:119 - ********* Verify the success message ***************

@@ -22,7 +22,7 @@ mvn clean install test
   ![extensionscreen](.src/artifacts/Cucumber_reports.png)
   
 ## Highlights
-•	Page Object model implementation.
+•	Page Object model implementation./n
 •	Mutibrowser support
 •	BDD with cucumber
 •	Data driven testing

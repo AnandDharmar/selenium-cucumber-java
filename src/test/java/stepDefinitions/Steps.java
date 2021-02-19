@@ -49,76 +49,75 @@ public class Steps extends BaseClass {
     public void userEntersAValidCredentials() {
         driver.manage().window().maximize();
         driver.get(testData.readProperty("baseURL"));
-        lp = new LoginPage(driver);
+        loginPage = new LoginPage(driver);
         logger.info("********* Launching browser************");
-        lp.login(testData.readProperty("UserName"), testData.readProperty("Password"));
+        loginPage.login(testData.readProperty("UserName"), testData.readProperty("Password"));
     }
 
     @And("Customer clicks on the T-Shirt category")
     public void customerClicksOnTheTShirtCategory() {
-        tp = new TShirtPage(driver);
+        tShirtPage = new TShirtPage(driver);
     }
 
     @And("Selects a T-Shirt and proceeds to checkout")
     public void selectsATShirtAndProceedsToCheckout() {
         logger.info("********* Selecting T-Shirt  ***************");
-        tp.selectTShirt();
-        sp = new SummaryPage(driver);
-        sp.proceedToPayment();
+        tShirtPage.selectTShirt();
+        summaryPage = new SummaryPage(driver);
+        summaryPage.proceedToPayment();
     }
 
     @And("agree to the terms and conditions")
     public void agreeToTheTermsAndConditions() {
         logger.info("********* Selecting Terms and Conditions  ***************");
-        sp.clickonTerms();
+        summaryPage.clickonTerms();
 
     }
 
     @And("proceeds to pay by the available payment options")
     public void proceedsToPayByTheAvilablePaymentOptions() {
         logger.info("********* Pay by bank wire  ***************");
-        sp.paymentOptions();
+        summaryPage.paymentOptions();
     }
 
     @And("Customer Confirms his order")
     public void customerConfirmsHisOrder() {
         logger.info("********* Payment confirmation and reference no generated  ***************");
-        cp = new ConfirmationPage(driver);
-        OrderNumber = cp.getReference();
+        confirmationPage = new ConfirmationPage(driver);
+        OrderNumber = confirmationPage.getReference();
     }
 
     @When("Customer navigates his order history page")
     public void customerNavigatesHisOrderHistoryPage() {
         logger.info("********* Order history page ***************");
-        oh = new OrderHistoryPage(driver);
-        oh.clickOrderHistory();
+        orderHistoryPage = new OrderHistoryPage(driver);
+        orderHistoryPage.clickOrderHistory();
     }
 
     @Then("Order history should reflect this order for a T-Shirt")
     public void orderHistoryShouldReflectThisOrderForATShirt() {
         logger.info("********* Comparing the order should reflect the generated one ***************");
-        oh = new OrderHistoryPage(driver);
-        Assert.assertEquals(true, oh.getReferenceNo(OrderNumber));
+        Assert.assertEquals(true, orderHistoryPage.getReferenceNo(OrderNumber));
     }
 
     @And("User clicks on My Personal Information")
     public void userClicksOnMyPersonalInformation() {
         logger.info("********* personal Information ***************");
-        ma = new MyAccountPage(driver);
-        ma.clickMyPersonaInfo();
+        myAccountPage = new MyAccountPage(driver);
+        myAccountPage.clickMyPersonaInfo();
     }
 
     @When("User updates the lastname and saves")
     public void userUpdatesTheLastnameAndSaves() {
         logger.info("********* Update the last name ***************");
-        pi = new PersonalInfoPage(driver);
-        pi.updateLastname(testData.readProperty("Password"), testData.readProperty("Password"), testData.readProperty("Password"));
+        personalInfoPage = new PersonalInfoPage(driver);
+        personalInfoPage.updateLastname(testData.readProperty("Password"), testData.readProperty("Password"), testData.readProperty("Password"));
     }
 
     @Then("Success message should be displayed")
     public void successMessageShouldBeDisplayed() {
         logger.info("********* Verify the success message ***************");
-        Assert.assertEquals("Your personal information has been successfully updated.", pi.getSuccessMsg());
+        Assert.assertEquals("Your personal information has been successfully updated.", personalInfoPage.getSuccessMsg());
 
     }
 }
