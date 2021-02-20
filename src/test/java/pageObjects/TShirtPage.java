@@ -10,11 +10,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class TShirtPage {
 
 
-    public WebDriver ldriver;
+    public WebDriver driver;
 
-    public TShirtPage(WebDriver rdriver) {
-        ldriver = rdriver;
-        PageFactory.initElements(rdriver, this);
+    public TShirtPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
     By tShirtsLink = By.cssSelector("ul.sf-menu > li > [title='T-shirts']");
@@ -23,13 +23,13 @@ public class TShirtPage {
     By tShirtImage = By.cssSelector("[alt='Faded Short Sleeve T-shirts']");
 
     public void selectTShirt() {
-        Actions action = new Actions(ldriver);
-        ldriver.findElement(tShirtsLink).click();
-        action.moveToElement(ldriver.findElement(tShirtImage)).build().perform();
-        ldriver.findElement(addToCart).click();
-        WebDriverWait wait = new WebDriverWait(ldriver, 5);
-        wait.until(ExpectedConditions.visibilityOf(ldriver.findElement(proceedToCheckout)));
-        ldriver.findElement(proceedToCheckout).click();
+        Actions action = new Actions(driver);
+        driver.findElement(tShirtsLink).click();
+        action.moveToElement(driver.findElement(tShirtImage)).build().perform();
+        driver.findElement(addToCart).click();
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(proceedToCheckout)));
+        driver.findElement(proceedToCheckout).click();
     }
 
 }

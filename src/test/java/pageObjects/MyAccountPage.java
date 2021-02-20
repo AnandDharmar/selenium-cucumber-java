@@ -5,16 +5,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class MyAccountPage {
-    public WebDriver ldriver;
+    public WebDriver driver;
 
-    public MyAccountPage(WebDriver rdriver) {
-        ldriver = rdriver;
-        PageFactory.initElements(rdriver, this);
+    public MyAccountPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
     By personalInformation = By.cssSelector("a[title='Information'] > span");
 
     public void clickMyPersonaInfo() {
-        ldriver.findElement(personalInformation).click();
+        driver.findElement(personalInformation).click();
     }
 }

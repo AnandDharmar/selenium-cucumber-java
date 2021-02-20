@@ -7,11 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage {
 
 
-    public WebDriver ldriver;
+    public WebDriver driver;
 
-    public LoginPage(WebDriver rdriver) {
-        ldriver = rdriver;
-        PageFactory.initElements(rdriver, this);
+    public LoginPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
     By signInLink = By.cssSelector(".login");
@@ -20,10 +20,10 @@ public class LoginPage {
     By signInButton = By.cssSelector("button#SubmitLogin > span");
 
     public void login(String username, String password) {
-        ldriver.findElement(signInLink).click();
-        ldriver.findElement(uname).sendKeys(username);
-        ldriver.findElement(pwd).sendKeys(password);
-        ldriver.findElement(signInButton).click();
+        driver.findElement(signInLink).click();
+        driver.findElement(uname).sendKeys(username);
+        driver.findElement(pwd).sendKeys(password);
+        driver.findElement(signInButton).click();
     }
 
 }

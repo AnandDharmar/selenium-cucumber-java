@@ -5,22 +5,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class OrderHistoryPage {
-    public WebDriver ldriver;
+    public WebDriver driver;
 
-    public OrderHistoryPage(WebDriver rdriver) {
-        ldriver = rdriver;
-        PageFactory.initElements(rdriver, this);
+    public OrderHistoryPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
     By orderHistory = By.cssSelector("a[title='Orders'] > span");
 
     public Boolean findValues(String OrderNumber) {
-        String OrderReference = ldriver.findElement(By.xpath("//td[contains(.," + OrderNumber + ")]")).getText();
+        String OrderReference = driver.findElement(By.xpath("//td[contains(.," + OrderNumber + ")]")).getText();
         return OrderNumber == null | !(OrderReference.isEmpty());
     }
 
     public void clickOrderHistory() {
-        ldriver.findElement(orderHistory).click();
+        driver.findElement(orderHistory).click();
     }
 
     public Boolean getReferenceNo(String OrderNumber) {

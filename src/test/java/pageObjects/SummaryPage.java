@@ -5,11 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class SummaryPage {
-    public WebDriver ldriver;
+    public WebDriver driver;
 
-    public SummaryPage(WebDriver rdriver) {
-        ldriver = rdriver;
-        PageFactory.initElements(rdriver, this);
+    public SummaryPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
     By proceedToCheckout = By.cssSelector("a.standard-checkout > span");
@@ -20,19 +20,19 @@ public class SummaryPage {
     By confirmMyOrder = By.cssSelector("button.button-medium > span");
 
     public void proceedToPayment() {
-        ldriver.findElement(proceedToCheckout).click();
-        ldriver.findElement(addressProceedToCheckout).click();
+        driver.findElement(proceedToCheckout).click();
+        driver.findElement(addressProceedToCheckout).click();
 
     }
 
     public void clickonTerms() {
-        ldriver.findElement(terms).click();
-        ldriver.findElement(shoppingProceedToCheckout).click();
+        driver.findElement(terms).click();
+        driver.findElement(shoppingProceedToCheckout).click();
     }
 
     public void paymentOptions() {
-        ldriver.findElement(payByBank).click();
-        ldriver.findElement(confirmMyOrder).click();
+        driver.findElement(payByBank).click();
+        driver.findElement(confirmMyOrder).click();
     }
 
 

@@ -6,12 +6,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class PersonalInfoPage {
-    public WebDriver ldriver;
+    public WebDriver driver;
     Faker faker = new Faker();
 
-    public PersonalInfoPage(WebDriver rdriver) {
-        ldriver = rdriver;
-        PageFactory.initElements(rdriver, this);
+    public PersonalInfoPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
     By lastName = By.cssSelector("#lastname");
@@ -22,16 +22,16 @@ public class PersonalInfoPage {
     By successMsg = By.cssSelector(".alert");
 
     public void updateLastname(String currentPass, String newPass, String ConfPass) {
-        ldriver.findElement(lastName).clear();
-        ldriver.findElement(lastName).sendKeys(faker.name().firstName());
-        ldriver.findElement(currentPassword).sendKeys(currentPass);
-        ldriver.findElement(newPassword).sendKeys(newPass);
-        ldriver.findElement(confirmPassword).sendKeys(ConfPass);
-        ldriver.findElement(save).click();
+        driver.findElement(lastName).clear();
+        driver.findElement(lastName).sendKeys(faker.name().firstName());
+        driver.findElement(currentPassword).sendKeys(currentPass);
+        driver.findElement(newPassword).sendKeys(newPass);
+        driver.findElement(confirmPassword).sendKeys(ConfPass);
+        driver.findElement(save).click();
     }
 
     public String getSuccessMsg() {
-        return ldriver.findElement(successMsg).getText();
+        return driver.findElement(successMsg).getText();
     }
 
 }

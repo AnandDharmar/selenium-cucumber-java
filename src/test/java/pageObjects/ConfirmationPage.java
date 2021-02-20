@@ -8,21 +8,21 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ConfirmationPage {
-    public WebDriver ldriver;
+    public WebDriver driver;
 
-    public ConfirmationPage(WebDriver rdriver) {
-        ldriver = rdriver;
-        PageFactory.initElements(rdriver, this);
+    public ConfirmationPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
     By userName = By.cssSelector("a.account > span");
-    By refererno = By.cssSelector(".box");
+    By referenceNo = By.cssSelector(".box");
 
     public String getReference() {
-        System.out.println("Test is" + ldriver.findElement(refererno).getText());
-        String OrderNumberText = ldriver.findElement(refererno).getText();
+        System.out.println("Test is" + driver.findElement(referenceNo).getText());
+        String OrderNumberText = driver.findElement(referenceNo).getText();
         String OrderNumber = OrderMatch(OrderNumberText);
-        ldriver.findElement(userName).click();
+        driver.findElement(userName).click();
         return OrderNumber;
     }
 
