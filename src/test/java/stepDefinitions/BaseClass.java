@@ -10,6 +10,7 @@ import java.util.Properties;
 public class BaseClass {
     public WebDriver driver;
     public LoginPage loginPage;
+    public DisputePage disputePage;
     public TShirtPage tShirtPage;
     public SummaryPage summaryPage;
     public MyAccountPage myAccountPage;

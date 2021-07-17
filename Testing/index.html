@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Dispute List</title>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
+    <style>
+      
+
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+
+        .cases {
+          margin-top: 5%;
+        }
+
+       a {
+          margin-bottom: 2%;
+          display: block;
+          background-color: rgb(53, 67, 144);
+          color: white;
+          padding: 1em 1.5em;
+          text-decoration: none;
+          text-transform: uppercase          
+        } 
+
+ 
+    </style>
+  </head>
+  <body>
+    <div class="cases">
+      <a href="#" class="hide" style="display: none; " >Dispute case - 13 - 15/07/2021</a>
+      <a href="#" class="hide" style="display: none; " >Dispute case - 12 - 15/07/2021</a>    
+      <a href="#" class="hide" style="display: none;" >Dispute case - 11 - 15/07/2021</a>
+      <a href="#" class="hide" style="display: none;" >Dispute case - 10 - 15/07/2021</a>
+      <a href="#" class="hide" style="display: none;" >Dispute case -9 - 15/07/2021</a>
+      <a href="#" class="hide" style="display: none;" >Dispute case -8 - 15/07/2021</a>     
+      <a href="#" class="hide" style="display: none;" >Dispute case -8 - 15/07/2021</a>
+      <a href="#" class="hide" style="display: none;" >Dispute case -7 - 15/07/2021</a>
+      <a href="dispute6.html" class="show">Dispute case -6 - 15/07/2021</a>
+      <a href="dispute5.html" class="show">Dispute case -5 - 15/07/2021</a>
+      <a href="dispute4.html" class="show">Dispute case -4 - 15/07/2021</a>
+      <a href="dispute3.html" class="show">Dispute case -3 - 15/07/2021</a>
+      <a href="dispute2.html" class="show">Dispute case -2 - 15/07/2021</a>
+      <a href="dispute1.html" class="show" id="a1">Dispute case -1 - 15/07/2021</a>
+    </div>    
+   </body>
+    
+  <script type='text/javascript'>
+
+    document.addEventListener(
+        'DOMContentLoaded', () => {
+          document.getElementById('a1').addEventListener('click', goOne);
+        }
+      );
+    
+      function goOne(ev) {
+          history.pushState({page: 1}, '', '#linkclicked');
+      }
+
+      $(document).ready(function() {
+        if (window.location.href.indexOf("#linkclicked") > -1) {
+          console.log("Hello")
+          $('.hide').show()
+        }
+      });
+
+   
+</script>
+
+</html>

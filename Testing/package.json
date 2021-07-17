@@ -1,0 +1,15 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "npx serve",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shankar Balakrishna",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.12.3",
+    "serve": "^12.0.0"
+  }
+}
